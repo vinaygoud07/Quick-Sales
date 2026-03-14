@@ -1,0 +1,257 @@
+    <!DOCTYPE html>
+<html>
+<head>
+<title>My Quick Sales Store</title>
+<link rel="stylesheet" href="ol.css">
+</head>
+<body>
+
+<header>
+<h1>Quick Sales</h1>
+<input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
+
+<div class="cart">
+    Cart: <span id="cartCount">0</span>
+    <!--  count happened here -->
+    <a href="cart.html" style="margin-left:10px; color:blue; text-decoration:none;">Go to Cart</a>
+</div>
+</header>
+
+<h2 class="heading">Products</h2>
+<div class="products">
+<!-- 1 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd"
+onclick="showDetails('iPhone Mobile','₹40000',this.src)">
+<h3 class="title">iPhone Mobile</h3>
+<button onclick="addToCart('iPhone Mobile',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 2 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+onclick="showDetails(' Car','₹5,00,000',this.src)">
+<h3 class="title"> Car</h3>
+<button onclick="addToCart('car',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+onclick="showDetails('Dell Laptop','₹30000',this.src)">
+<h3 class="title">Dell Laptop</h3>
+<button onclick="addToCart('Dell Laptop',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 4 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+onclick="showDetails('Headphones','₹2000',this.src)">
+<h3 class="title">Headphones</h3>
+<button onclick="addToCart('Headphones',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 5 -->
+<div class="card">
+<img src="royalmodel.avif"
+    onclick="showDetails('Royal Enfield Bike','₹1,80,000',this.src)">
+<h3 class="title">Royal Enfield Bike</h3>
+<button onclick="addToCart('Royal Enfield Bike',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiypadMQnRH3ooHQE0UoZqFJV2vP1N2JsSmg&s"
+onclick="showDetails('Gaming PC','₹70000',this.src)">
+<h3 class="title">Gaming PC</h3>
+<button onclick="addToCart('Gaming PC',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+onclick="showDetails('Macbook ','₹35000',this.src)">
+<h3 class="title">HP Laptop</h3>
+<button onclick="addToCart('HP Laptop',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc"
+onclick="showDetails('Sofa Set','₹12000',this.src)">
+<h3 class="title">Sofa Set</h3>
+<button onclick="addToCart('Sofa Set',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf"
+onclick="showDetails('Monitor','₹9000',this.src)">
+<h3 class="title">Monitor</h3>
+<button onclick="addToCart('Monitor',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 10 -->
+<div class="card">
+    <img src="watch.jpg" 
+onclick="showDetails('Smart Watch','₹5000',this.src)">
+<h3 class="title">Smart Watch</h3>
+<button onclick="addToCart('Smart Watch',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 11 -->
+<div class="card">
+    <img src="tablet.webp" 
+onclick="showDetails('Tablet','₹15000',this.src)">
+<h3 class="title">Tablet</h3>
+<button onclick="addToCart('Tablet',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 12 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32"
+onclick="showDetails('Camera','₹45000',this.src)">
+<h3 class="title">Camera</h3>
+<button onclick="addToCart('Camera',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 13 -->
+<div class="card">  
+<img src="officechair.webp"
+onclick="showDetails('Office Chair','₹5000',this.src)">
+<h3 class="title">Office Chair</h3>
+<button onclick="addToCart('Officechair',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 14 -->
+<div class="card">
+<img src="phone.jpg"
+    onclick="showDetails('Samsung Phone','₹18000',this.src)">
+<h3 class="title">Samsung Phone</h3>
+<button onclick="addToCart('Samsung Phone',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 15 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f"
+onclick="showDetails('Drone','₹60000',this.src)">
+<h3 class="title">Drone</h3>
+<button onclick="addToCart('Drone',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 16 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+onclick="showDetails('Running Shoes','₹3000',this.src)">
+<h3 class="title">Running Shoes</h3>
+<button onclick="addToCart('Running Shoes',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 17 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc"
+onclick="showDetails('Wooden Table','₹7000',this.src)">
+<h3 class="title">Wooden Table</h3>
+<button onclick="addToCart('Wooden Table',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 18 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db"
+onclick="showDetails('Gaming Monitor','₹15000',this.src)">
+<h3 class="title">Gaming Monitor</h3>
+<button onclick="addToCart('Gaming Monitor',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 19 -->
+<div class="card">
+<img class="keyoard" src="key.webp"
+    onclick="showDetails('Keyboard','₹2000',this.src)">
+<h3 class="title">Keyboard</h3>
+<button onclick="addToCart('Keyboard',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 20 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1527814050087-3793815479db"
+onclick="showDetails('Mouse','₹1200',this.src)">
+<h3 class="title">Mouse</h3>
+<button onclick="addToCart('Mouse',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 21 -->
+<div class="card">
+<img src="priter.jpg"
+    onclick="showDetails('Printer','₹8000',this.src)">
+<h3 class="title">Printer</h3>
+<button onclick="addToCart('printer',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 22 -->
+<div class="card">
+<img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/products/pictures/item/free/original/wQWIP1a2x-BPL-32-HD-LINUX-LITE-SMART-TV-32H-E2300.jpeg"
+onclick="showDetails('Smart TV','₹35000',this.src)">
+<h3 class="title">Smart TV</h3>
+<button onclick="addToCart('Smart TV',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 23 -->
+<div class="card">
+<img src="gpu.jpg"
+onclick="showDetails('Graphics Card','₹45000',this.src)">
+<h3 class="title">Graphics Card</h3>
+<button onclick="addToCart('Graphics  Card',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 24 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97"
+onclick="showDetails('Android Phone','₹14000',this.src)">
+<h3 class="title">Android Phone</h3>
+<button onclick="addToCart('Android  phone',this.parentElement.querySelector('img').src)">Add
+</div>
+
+<!-- 25 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1547949003-9792a18a2601"
+onclick="showDetails('Laptop Bag','₹1500',this.src)">
+<h3 class="title">Laptop Bag</h3>
+<button onclick="addToCart('Laptop Bag',this.parentElement.querySelector('img').src)">Add
+</div>
+</div>
+
+<div id="popup" class="popup">
+<div class="popup-content">
+    <span onclick="closePopup()" class="close">X</span>
+    <img id="popupImg">
+    <h2 id="popupTitle"></h2>
+    <p id="popupPrice"></p>
+</div>
+</div>
+<script src="ol.js"></script>
+
+<footer>
+<div class="footer-container">
+    <div class="footer-section">
+    <h3>Quick Sales</h3>
+    <p>Buy and sell products easily online.</p>
+    </div>
+    <div class="footer-section">
+    <h4>Categories</h4>
+    <p>Mobiles</p>
+    <p>Cars</p>
+    <p>Electronics</p>
+    <p>Furniture</p>
+    </div>
+    <div class="footer-section">
+  <h4>Help</h4>
+  <a href="contact.html" style="color:white; text-decoration:none;">Contact Us</a><br>
+  <a href="support.html" style="color:white; text-decoration:none;">Support</a>
+</div>
+</div>
+<p class="copyright">© 2026 My Quick Sales Website | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+

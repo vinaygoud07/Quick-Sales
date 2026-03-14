@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Cart</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #cartItems { margin-top: 20px; }
+    #cartItems div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 5px 0;
+      background: #f9f9f9;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    #cartItems img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .remove-btn {
+      margin-left: auto;
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .buy-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <h1>Your Cart</h1>
+  <a href="index.html" style="color:rgb(168, 26, 26); text-decoration:none; margin-left:20px;"> Home</a>
+</header>
+
+<p>Total Items: <span id="cartCount">0</span></p>
+
+<div id="cartItems"></div>
+
+<button class="buy-btn" onclick="buyItems()">Buy Now</button>
+
+<script>
+function loadCart(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").innerText = cart.length;
+
+    let cartBox = document.getElementById("cartItems");
+    cartBox.innerHTML = "";
+
+    cart.forEach((itemData, index) => {
+        let item = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.src = itemData.image;
+
+        let text = document.createElement("span");
+        text.innerText = itemData.name;
+
+        let removeBtn = document.createElement("button");
+        removeBtn.innerText = "Remove";
+        removeBtn.className = "remove-btn";
+        removeBtn.onclick = function(){
+            removeItem(index);
+        };
+
+        item.appendChild(image);
+        item.appendChild(text);
+        item.appendChild(removeBtn);
+        cartBox.appendChild(item);
+    });
+}
+
+function removeItem(index){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+function buyItems(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if(cart.length === 0){
+        alert("Your cart is empty!");
+    } else {
+        alert("Thank you for your purchase of " + cart.length + " items!");
+        localStorage.removeItem("cart");
+        loadCart();
+    }
+}
+
+window.onload = loadCart;
+</script>
+
+</body>
+</html>
